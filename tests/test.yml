@@ -3,5 +3,8 @@
   connection: local
   become: true
   roles:
-    - docker-latest
-    - consul
+    - winmasta.docker-latest
+    - winmasta.nginx
+    - winmasta.consul-server
+    - winmasta.prometheus
+    - winmasta.grafana
