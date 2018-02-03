@@ -1,0 +1,24 @@
+galaxy_info:
+  author: Konstantin Shestakov
+  description: create server for staging purposes including prometheus, grafana, ELK in separate docker containers
+               all UIs behind nginx with basic authorization.
+  company: SibEDGE
+  license: license (MIT)
+  min_ansible_version: 2.3.3.0
+
+  platforms:
+  - name: Ubuntu
+    versions:
+    - trusty
+    - xenial
+
+  galaxy_tags:
+    - consul
+    - sibedge
+
+  dependencies:
+    - winmasta.docker-latest
+    - winmasta.nginx
+    - winmasta.consul-server
+    - winmasta.prometheus
+    - winmasta.grafana
