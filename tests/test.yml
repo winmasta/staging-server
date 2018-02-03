@@ -6,5 +6,5 @@
     - winmasta.docker-latest
     - winmasta.nginx
     - winmasta.consul-server
-    - winmasta.prometheus
+    - winmasta.prometheus-server
     - winmasta.grafana
