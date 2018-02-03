@@ -24,6 +24,7 @@ playbook `main.yml` vars section. Example:
 ---
 vars:
   GRAFANA_PORT: 3001 # This variable will overwrite default variable `GRAFANA_PORT: 3000` in role `winmasta.grafana`
+  NGINX_DEFAULT_PASSWD: another_password # So as this
 ```
 
 Dependencies
