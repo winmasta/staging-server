@@ -5,6 +5,8 @@
   roles:
     - winmasta.docker-latest
     - winmasta.nginx
+    - winmasta.CA
     - winmasta.consul-server
     - winmasta.prometheus-server
     - winmasta.grafana
+    - winmasta.ELK
