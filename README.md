@@ -93,7 +93,7 @@ Depends on:
      - winmasta.nginx
      - winmasta.CA
      - winmasta.consul-server
-     - winmasta.prometheus
+     - winmasta.prometheus-server
      - winmasta.grafana
      - winmasta.ELK
  EOF
