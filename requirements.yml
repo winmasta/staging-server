@@ -1,5 +1,5 @@
 - src: winmasta.docker-latest
 - src: winmasta.nginx
-- src: winmasta.consul
-- src: winmasta.prometheus
+- src: winmasta.consul-server
+- src: winmasta.prometheus-server
 - src: winmasta.grafana
