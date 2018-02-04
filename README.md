@@ -47,16 +47,16 @@ Depends on:
  cd ~/
  mkdir staging-server
  cd staging-server
- ansible-galaxy install winmasta.consul-server --roles-path .
+ ansible-galaxy install winmasta.staging-server --roles-path .
  ```
 
    - as soon as ansible-galaxy doesn't install role dependencies yet, you should do it manually
 
  ```bash
- ansible-galaxy install -r winmasta.consul-server/requirements.yml --roles-path .
+ ansible-galaxy install -r winmasta.staging-server/requirements.yml --roles-path .
  ```
 
-   - create file `hosts`, containing hostname(s) or IP address(es) of host(s), where you want to deploy staging-server
+   - create file `hosts`, containing hostname(s) or IP address(es) of host(s), where you want to deploy role
 
  ```bash
  echo "ENTER HOSTNAME OR IP" > hosts
@@ -91,9 +91,11 @@ Depends on:
    roles:
      - winmasta.docker-latest
      - winmasta.nginx
+     - winmasta.CA
      - winmasta.consul-server
      - winmasta.prometheus
      - winmasta.grafana
+     - winmasta.ELK
  EOF
  ```
 
