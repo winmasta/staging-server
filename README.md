@@ -17,7 +17,7 @@ Installed OS:
 Role Variables
 --------------
 
-All variables defined in corresponding roles and it can be overwrited by adding variables with the same name in
+All variables defined in corresponding roles and it can be overwritten by adding variables with the same name in
 playbook `main.yml` vars section. Example:
 
 ```yaml
