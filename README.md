@@ -17,11 +17,10 @@ Installed OS:
 Role Variables
 --------------
 
-All variables defined in corresponding roles and it can be overwrited by adding variables with the same name in
+All variables defined in corresponding roles and it can be overwritten by adding variables with the same name in
 playbook `main.yml` vars section. Example:
 
 ```yaml
----
 vars:
   GRAFANA_PORT: 3001 # This variable will overwrite default variable `GRAFANA_PORT: 3000` in role `winmasta.grafana`
   NGINX_DEFAULT_PASSWD: another_password # So as this
@@ -48,16 +47,16 @@ Depends on:
  cd ~/
  mkdir staging-server
  cd staging-server
- ansible-galaxy install winmasta.consul-server --roles-path .
+ ansible-galaxy install winmasta.staging-server --roles-path .
  ```
 
    - as soon as ansible-galaxy doesn't install role dependencies yet, you should do it manually
 
  ```bash
- ansible-galaxy install -r winmasta.consul-server/requirements.yml --roles-path .
+ ansible-galaxy install -r winmasta.staging-server/requirements.yml --roles-path .
  ```
 
-   - create file `hosts`, containing hostname(s) or IP address(es) of host(s), where you want to deploy staging-server
+   - create file `hosts`, containing hostname(s) or IP address(es) of host(s), where you want to deploy role
 
  ```bash
  echo "ENTER HOSTNAME OR IP" > hosts
@@ -92,9 +91,11 @@ Depends on:
    roles:
      - winmasta.docker-latest
      - winmasta.nginx
+     - winmasta.CA
      - winmasta.consul-server
      - winmasta.prometheus
      - winmasta.grafana
+     - winmasta.ELK
  EOF
  ```
 
