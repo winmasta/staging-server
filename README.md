@@ -17,6 +17,20 @@ Installed OS:
 Role Variables
 --------------
 
+For dependency roles `winmasta.CA` and `winmasta.ELK` there is one common variabvle `USE_TLS`, which enables `True`
+or disables `False` using TLS for consul and logstash beats. If TLS is not required `USE_TLS` can be set to `False`
+and in that case, role `winmasta.CA` can be commented in `requirements.yml`. Example:
+
+```yaml
+- src: winmasta.docker-latest
+- src: winmasta.nginx
+# - src: winmasta.CA
+- src: winmasta.consul-server
+- src: winmasta.prometheus-server
+- src: winmasta.grafana
+- src: winmasta.ELK
+```
+
 All variables defined in corresponding roles and it can be overwritten by adding variables with the same name in
 playbook `main.yml` vars section. Example:
 
@@ -24,6 +38,11 @@ playbook `main.yml` vars section. Example:
 vars:
   GRAFANA_PORT: 3001 # This variable will overwrite default variable `GRAFANA_PORT: 3000` in role `winmasta.grafana`
   NGINX_DEFAULT_PASSWD: another_password # So as this
+```
+
+Also variables can be passed witn ansible `--extra-vars`. Example:
+```bash
+ansible-playbook -i hosts main.yml --extra-vars "USE_TLS=False"
 ```
 
 Dependencies
